@@ -1,6 +1,7 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class P2cParentComponent extends LightningElement {
+    @track percentage=10;
     carousalData = [
         {
             src:"https://www.lightningdesignsystem.com/assets/images/carousel/carousel-01.jpg",
@@ -18,4 +19,9 @@ export default class P2cParentComponent extends LightningElement {
             description:"Third card description."
         }
     ]
+
+    changeHandler(event)
+    {
+        this.percentage = event.target.value;
+    }
 }
